@@ -22,4 +22,10 @@ class NumberDaoTest {
         val returnFromLogic = numberDao.regularNumber("XX")
         assertEquals("20", returnFromLogic)
     }
+    // Adding more tests per Peer Review
+    @Test
+    fun `logicalResponse should return MMVI`() {
+        val returnFromLogic = numberDao.logicalResponse("2006")
+        assertEquals("MMVI", returnFromLogic)
+    }
 }
