@@ -28,4 +28,10 @@ class MainTest {
         val response = client.newCall(Request.Builder().url("http://localhost:7070/").build()).execute()
         assertEquals(200, response.code)
     }
+    @Test
+    fun `Restlet to ask for input`() {
+        val response = client.newCall(Request.Builder().url("http://localhost:7070/").build()).execute()
+        assertEquals("Please provide an input!", response.body?.string())
+    }
+
 }
