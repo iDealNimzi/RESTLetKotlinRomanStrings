@@ -54,4 +54,10 @@ class MainTest {
         assertEquals("MCDLVIII", response.body?.string())
     }
 
+    @Test
+    fun `Restlet to handle invalid input`() {
+        val response = client.newCall(Request.Builder().url("http://localhost:7070/numbers/XXASD").build()).execute()
+        assertEquals("", response.body?.string())
+    }
+
 }

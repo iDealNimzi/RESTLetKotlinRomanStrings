@@ -28,4 +28,10 @@ class NumberDaoTest {
         val returnFromLogic = numberDao.logicalResponse("2006")
         assertEquals("MMVI", returnFromLogic)
     }
+    @Test
+    fun `romanString should return Blank String from null`() {
+        val returnFromLogic = numberDao.romanString(null)
+        assertEquals("", returnFromLogic)
+    }
+
 }
