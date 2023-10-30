@@ -33,5 +33,25 @@ class MainTest {
         val response = client.newCall(Request.Builder().url("http://localhost:7070/").build()).execute()
         assertEquals("Please provide an input!", response.body?.string())
     }
+    @Test
+    fun `Restlet to ask for INT logical resoning`() {
+        val response = client.newCall(Request.Builder().url("http://localhost:7070/55").build()).execute()
+        assertEquals("LV", response.body?.string())
+    }
+    @Test
+    fun `Restlet to ask for  STRING logical resoning`() {
+        val response = client.newCall(Request.Builder().url("http://localhost:7070/XXI").build()).execute()
+        assertEquals("21", response.body?.string())
+    }
+    @Test
+    fun `Restlet to ask for roman conversion`() {
+        val response = client.newCall(Request.Builder().url("http://localhost:7070/romans/MM").build()).execute()
+        assertEquals("2000", response.body?.string())
+    }
+    @Test
+    fun `Restlet to ask for integer conversion`() {
+        val response = client.newCall(Request.Builder().url("http://localhost:7070/numbers/1458").build()).execute()
+        assertEquals("MCDLVIII", response.body?.string())
+    }
 
 }
